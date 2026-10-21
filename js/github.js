@@ -4,12 +4,12 @@
    textos do config. Se a API falhar, usa só o config.
    ========================================================== */
 (function () {
-  const CACHE_KEY = "gh-repos-v1";
+  const CACHE_KEY = () => "gh-repos-v2-" + Portfolio.config.githubUser;
   const CACHE_MS = 30 * 60 * 1000;
 
   function lerCache() {
     try {
-      const raw = sessionStorage.getItem(CACHE_KEY);
+      const raw = sessionStorage.getItem(CACHE_KEY());
       if (!raw) return null;
       const { t, data } = JSON.parse(raw);
       return Date.now() - t < CACHE_MS ? data : null;
@@ -17,7 +17,7 @@
   }
 
   function salvarCache(data) {
-    try { sessionStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), data })); } catch (e) {}
+    try { sessionStorage.setItem(CACHE_KEY(), JSON.stringify({ t: Date.now(), data })); } catch (e) {}
   }
 
   function montar(repo, extra) {
