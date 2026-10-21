@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabriel Rosas · Desenvolvedor web</title>
+  <meta name="description" content="Gabriel Rosas faz sites e sistemas sob medida para pequenos negócios. Veja os projetos e monte um rascunho do seu site.">
+  <script>
+    document.documentElement.classList.add("js");
+    try { var t = localStorage.getItem("tema"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Caveat:wght@600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="topo__in">
+      <a class="logo" href="#inicio">Gabriel Rosas<span>.</span></a>
+      <nav id="menu" class="menu" aria-label="Principal">
+        <a href="#projetos">Projetos</a>
+        <a href="#orcamento">Monte seu site</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="topo__acoes">
+        <button id="tema-btn" class="icone" type="button" aria-label="Alternar tema claro e escuro">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>
+        </button>
+        <button id="menu-btn" class="icone menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section id="inicio" class="hero">
+      <div class="hero__texto">
+        <p class="sobretitulo">Gabriel Rosas · desenvolvedor web</p>
+        <h1>Faço o site do seu negócio e o <mark>sistema que trabalha</mark> por trás dele.</h1>
+        <p class="hero__lead">A secretaria de uma escola com 637 alunos roda hoje num sistema que eu fiz. Monte um rascunho do seu site aqui embaixo e veja o prazo na hora.</p>
+        <div class="hero__acoes">
+          <a class="btn" href="#orcamento">Montar meu site</a>
+          <a class="btn btn--sec" href="#projetos">Ver projetos</a>
+        </div>
+      </div>
+      <figure class="hero__foto">
+        <img src="img/gabriel.jpg" width="900" height="946" alt="Foto de Gabriel Rosas">
+      </figure>
+    </section>
+
+    <section id="projetos" class="secao">
+      <div class="secao__cab" data-reveal>
+        <p class="sobretitulo">Projetos</p>
+        <h2>Projetos que eu construí</h2>
+        <p id="proj-fonte" class="fonte" aria-live="polite">Buscando projetos no GitHub…</p>
+      </div>
+      <div id="proj-filtros" class="filtros" role="group" aria-label="Filtrar projetos por categoria"></div>
+      <div id="proj-grade" class="grade">
+        <p class="vazio">Carregando projetos…</p>
+      </div>
+    </section>
+
+    <section id="orcamento" class="secao ob">
+      <div class="secao__cab" data-reveal>
+        <p class="sobretitulo">Monte seu site</p>
+        <h2>Escolha o que você precisa e veja o rascunho se montar</h2>
+        <p class="secao__sub">O prazo é uma estimativa. O valor eu passo depois de entender o seu negócio.</p>
+      </div>
+
+      <div class="ob__corpo">
+        <form id="ob-form" class="ob__form" onsubmit="return false">
+          <label class="campo">
+            <span class="campo__rotulo">Nome do negócio</span>
+            <input id="ob-negocio" type="text" placeholder="Ex.: Padaria Pão Quente" autocomplete="organization">
+          </label>
+
+          <fieldset class="grupo">
+            <legend>Tipo de site</legend>
+            <div id="ob-tipos" class="opcoes opcoes--tipos"></div>
+          </fieldset>
+
+          <fieldset id="ob-paginas-grupo" class="grupo">
+            <legend>Páginas</legend>
+            <div id="ob-paginas" class="opcoes"></div>
+          </fieldset>
+
+          <fieldset class="grupo">
+            <legend>Recursos</legend>
+            <div id="ob-recursos" class="opcoes"></div>
+          </fieldset>
+        </form>
+
+        <div class="ob__previa">
+          <div class="navegador">
+            <div class="navegador__barra">
+              <span class="navegador__bolas" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="navegador__url"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5z" fill="none" stroke="currentColor" stroke-width="2"/></svg><span id="ob-url">seunegocio.com.br</span></span>
+            </div>
+            <div id="ob-tela" class="tela" aria-label="Rascunho do site" role="img"></div>
+          </div>
+
+          <div class="ob__resumo">
+            <div>
+              <span class="ob__rotulo">Prazo estimado</span>
+              <strong id="ob-prazo" class="ob__prazo">2 a 3 semanas</strong>
+            </div>
+            <div class="ob__envio">
+              <a id="ob-zap" class="btn" href="#" target="_blank" rel="noopener" hidden>Enviar pelo WhatsApp</a>
+              <a id="ob-email" class="btn" href="#">Enviar por e-mail</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="secao sobre">
+      <div class="sobre__texto" data-reveal>
+        <p class="sobretitulo">Sobre</p>
+        <h2>Gosto de software que alguém usa na segunda-feira de manhã</h2>
+        <p>Sou o Gabriel. Faço sites e sistemas web, e também já entreguei app Android e API de pagamentos. A maior parte do que construí nasceu de um problema real: uma escola que precisava organizar os pagamentos de cada turma, uma portaria sem lugar para registrar objetos perdidos, uma sala que gastava energia à toa.</p>
+        <p>Prefiro conversar antes de programar. Entendo como o seu negócio funciona e só depois decido a tecnologia.</p>
+      </div>
+
+      <div class="sobre__lado" data-reveal>
+        <h3 class="mini">Como funciona um projeto comigo</h3>
+        <ol class="passos">
+          <li><b>Conversa</b> Você conta o que precisa e eu faço perguntas sobre o dia a dia do negócio.</li>
+          <li><b>Rascunho</b> Mostro como o site vai ficar antes de escrever código.</li>
+          <li><b>Construção</b> Você acompanha versões funcionando toda semana.</li>
+          <li><b>Entrega</b> Coloco no ar, ensino a usar e fico por perto para ajustes.</li>
+        </ol>
+
+        <h3 class="mini">Ferramentas</h3>
+        <dl class="ferramentas">
+          <dt>Web</dt><dd>HTML, CSS, JavaScript, React, Node.js</dd>
+          <dt>Back-end</dt><dd>C#, .NET, ASP.NET Core, PostgreSQL</dd>
+          <dt>Mobile</dt><dd>Kotlin, Jetpack Compose</dd>
+          <dt>Infra</dt><dd>Docker, RabbitMQ, MQTT</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="contato" class="secao contato">
+      <div class="contato__texto" data-reveal>
+        <p class="sobretitulo">Contato</p>
+        <h2>Me conta o que você precisa</h2>
+        <p>Escreva pelo formulário ou fale direto por aqui:</p>
+        <ul class="canais">
+          <li><a data-email= href="#">E-mail</a></li>
+          <li><a data-zap href="#" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a data-linkedin href="https://www.linkedin.com/in/gabriel-araujo-rosas-155707274/?isSelfProfile=true" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <form id="contato-form" class="contato__form" novalidate data-reveal>
+        <label class="campo">
+          <span class="campo__rotulo">Seu nome</span>
+          <input name="nome" type="text" autocomplete="name" required>
+        </label>
+        <label class="campo">
+          <span class="campo__rotulo">Sobre o projeto</span>
+          <textarea name="mensagem" rows="5" placeholder="Ex.: Tenho uma clínica e quero que os pacientes marquem consulta pelo site." required></textarea>
+        </label>
+        <button class="btn" type="submit">Abrir e-mail com a mensagem</button>
+        <p id="contato-aviso" class="aviso" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <span>© <span id="ano">2026</span> Gabriel Rosas</span>
+    <a data-github href="#" target="_blank" rel="noopener">Meus projetos no GitHub</a>
+  </footer>
+
+  <dialog id="proj-dialog" class="dlg" aria-label="Detalhes do projeto">
+    <div class="dlg__caixa">
+      <button class="dlg__fechar icone" type="button" data-fechar aria-label="Fechar">✕</button>
+      <div class="dlg__corpo"></div>
+    </div>
+  </dialog>
+
+  <script src="js/config.js"></script>
+  <script src="js/github.js"></script>
+  <script src="js/projetos.js"></script>
+  <script src="js/orcamento.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
