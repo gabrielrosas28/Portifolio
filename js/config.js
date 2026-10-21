@@ -4,6 +4,8 @@ Portfolio.config = {
   nome: "Gabriel Rosas",
   email: "gabrielaraujor05@gmail.com", 
   whatsapp: "5579996612005",
+  github: "https://github.com/gabrielrosas28",
+  githubUser: "gabrielrosas28",
   linkedin: "https://www.linkedin.com/in/gabriel-araujo-rosas-155707274/?isSelfProfile=true",
 
   projetos: {
